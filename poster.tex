@@ -170,6 +170,25 @@ for Time-Series Forecasting
 
   \begin{block}{Loss}
 
+    \[
+      \mathcal{L}=\lambda_1\mathcal{L}_{DS}+\lambda_2\mathcal{L}_{FC}+\lambda_3\mathcal{L}_{REC}+\lambda_4\mathcal{L}_{ORTH}
+    \]
+
+    \begin{itemize}
+      \item \textbf{Determined-State Loss}: RMSE on known historical $y$.
+      \item \textbf{Future-Consistency Loss}: RMSE between overlapping future estimates.
+      \item \textbf{Reconstruction Loss}: assesses information recovery
+        \begin{itemize}
+          \item $\mathcal{L}_{REC\_X}$: spatiotemporal information $X$ from $(S,Z,V)$
+          \item $\mathcal{L}_{REC\_S}$: latent cause representation $S$ recovered by $Y$
+        \end{itemize}
+      \item \textbf{Orthogonality Loss}: enforces orthogonality among $S$, $Z$, and $V$.
+    \end{itemize}
+
+    \heading{Ablation Study}
+
+    Full loss achieves best overall performance; removing any term reduces causal identification reliability (accuracy/F1/recall), and often worsens forecasting RMSE.
+
   \end{block}
 
   \begin{block}{Supplementary Details}
