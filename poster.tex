@@ -282,16 +282,20 @@ for Time-Series Forecasting
 
   \begin{block}{Supplementary Details}
 
+    CReP uses an autoencoder to decompose inputs into cause, effect, and non-causal representations, and TCNs to perform stable multi-step forecasting (Fig.~\ref{fig:crepsupfig2}). The learned abstract representations are interpreted using $\alpha\beta$-LRP to map causal relevance back to the original variables and identify causes and effects (Fig.~\ref{fig:crepsupfig3}).
+
     \begin{figure}
       \centering
       \includegraphics[width=0.69\linewidth]{img/crepsupfig2.png}
       \caption{Implementation details of CReP framework.}
+      \label{fig:crepsupfig2}
     \end{figure}
 
     \begin{figure}
       \centering
       \includegraphics[width=0.69\linewidth]{img/crepsupfig3.png}
       \caption{The causal analysis process through interpretation method $\alpha\beta$-LRP.}
+      \label{fig:crepsupfig3}
     \end{figure}
 
   \end{block}
