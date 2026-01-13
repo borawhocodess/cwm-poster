@@ -145,6 +145,25 @@ for Time-Series Forecasting
 
   \begin{exampleblock}{Background Theory}
 
+    \heading{Dynamic causation (reconstruction principle)}
+      If variable $a$ drives $b$ in a dynamical system, then information about $a$ is embedded in the time series of $b$.
+      Using delay embeddings there exists an implicit mapping (Takens-style):
+      \[
+        A_t=(a_t,\dots,a_{t+L-1})^\top,\quad
+        B_t=(b_t,\dots,b_{t+L})^\top,\quad
+        A_t \approx h(B_t)
+      \]
+
+    \heading{STI transformation (delay $\leftrightarrow$ non-delay)}
+      Spatiotemporal information transformation allows a learned non-delay embedding $C_t$ to be topologically conjugate to $B_t$.
+      \[
+        A_t = \approx h(C_t),
+      \]
+      This motivates learning a latent $Z_t$ that plays the role of a non-delay embedding from which $Y_t$ can be predicted:
+      \[
+        Y_t \approx g(Z_t),
+      \]
+
   \end{exampleblock}
 
 \end{column}
