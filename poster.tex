@@ -155,6 +155,25 @@ for Time-Series Forecasting
 
   \begin{block}{Results}
 
+    \begin{itemize}
+      \item Simulation systems:
+        \begin{itemize}
+          \item Lorenz 96 (50x60 - 15) (Fig. \ref{fig:crepfig234} left)
+          \item Kuramoto power grid (30x120 - 9) (Fig. \ref{fig:crepfig234} middle)
+          \item Gene regulatory network (Dream4) (40x50 - 8) (Fig. \ref{fig:crepfig234} right)
+        \end{itemize}
+      \item Real datasets:
+        \begin{itemize}
+          \item Hong Kong cardiovascular inpatients (70x14 - 25) (Fig. \ref{fig:crepfig5})
+          \item Japan COVID-19 transmission (30x47 - 14) (Fig. \ref{fig:crepfig5})
+        \end{itemize}
+      \item Metrics:
+        \begin{itemize}
+          \item RMSE (lower is better)
+          \item PCC (higher is better)
+        \end{itemize}
+    \end{itemize}
+
     \begin{figure}
       \centering
       \begin{minipage}[t]{0.31\linewidth}
@@ -170,19 +189,47 @@ for Time-Series Forecasting
         \includegraphics[width=\linewidth]{img/crepfig4.png}
       \end{minipage}
       \caption{Performance of the CReP on the three simulation models.}
+      \label{fig:crepfig234}
     \end{figure}
 
     \begin{figure}
       \centering
       \includegraphics[width=0.69\linewidth]{img/crepfig5.png}
       \caption{Performance of the CReP on the two real-world datasets.}
+      \label{fig:crepfig5}
     \end{figure}
+
+    \begin{table}
+      \centering
+      \begin{tabular}{l r r r r r r}
+        \toprule
+        & \multicolumn{2}{c}{Lorenz 96} & \multicolumn{2}{c}{Power grid} & \multicolumn{2}{c}{Dream4} \\
+        \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
+        \textbf{Method} & \textbf{RMSE} & \textbf{PCC} & \textbf{RMSE} & \textbf{PCC} & \textbf{RMSE} & \textbf{PCC} \\
+        \midrule
+        CReP     & \textbf{0.1086} & \textbf{0.9908} & \textbf{0.1127} & \textbf{0.9868} & \textbf{0.0984} & 0.8894 \\
+        ARNN     & 0.2328          & 0.8206          & 0.1501          & 0.9784          & 0.2281          & 0.8167 \\
+        STICM    & 0.1822          & 0.9752          & 0.1530          & 0.9854          & 0.1080          & \textbf{0.9928} \\
+        LSTM     & 0.4883          & 0.8303          & 0.3916          & 0.9659          & 0.8063          & 0.0615 \\
+        ARIMA    & 0.4204          & 0.6156          & 0.2558          & 0.9583          & 0.2650          & 0.1218 \\
+        SVR      & 0.8311          & 0.1618          & 0.4856          & 0.9540          & 0.6779          & 0.0566 \\
+        Informer & 0.1543          & 0.9005          & 0.1163          & 0.9837          & 0.4716          & 0.0489 \\
+        \bottomrule
+      \end{tabular}
+      \caption{Comparison to other forecasting methods.}
+      \label{tab:crepsuptab4}
+    \end{table}
 
     \begin{figure}
       \centering
       \includegraphics[width=0.69\linewidth]{img/crepsupfig4.png}
       \caption{The normalized causal results of CReP on simulation datasets. Blue bars denote the top 10 variables by causal strength, purple bars highlight true causes or effects among them, and red bars indicate true causes or effects that were missed.}
+      \label{fig:crepsupfig4}
     \end{figure}
+
+    \textbf{Critical discussion.}
+
+    While CReP correctly ranks many true causes and effects among the top variables, Fig.~\ref{fig:crepsupfig4} also reveals \textbf{false positives} and \textbf{missed true causes}. Moreover, the forecasting comparison in Table~\ref{tab:crepsuptab4} is limited to relatively \textbf{basic baselines} (e.g., ARIMA, LSTM, SVR) and does not include more recent state-of-the-art foundation time-series models. In addition, history length choice in datasets, prediction length, and hyperparameter choices differ between datasets, raising questions about the fairness of the evaluations. A more controlled evaluation with matched forecasting horizons and stronger baselines would be required to fully assess CReP's performance.
 
   \end{block}
 \end{column}
