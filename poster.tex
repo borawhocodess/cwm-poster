@@ -110,6 +110,8 @@ based on the spatiotemporal information transformation
 
     \textbf{Objectives}
 
+    % TODO: just describe it with words and put the definition of the terms to where it is needed to the loss function
+
     \begin{itemize}
     \item Given observations $X_t$ and a chosen target $y=x_k$:
       \begin{itemize}
@@ -195,6 +197,8 @@ based on the spatiotemporal information transformation
         \end{itemize}
     \end{itemize}
 
+    % TODO: select one
+
     \begin{figure}
       \centering
       \begin{minipage}[t]{0.31\linewidth}
@@ -241,12 +245,16 @@ based on the spatiotemporal information transformation
       \label{tab:crepsuptab4}
     \end{table}
 
+    % TODO: find out how did they measure this strength
+
     \begin{figure}
       \centering
       \includegraphics[width=0.69\linewidth]{img/crepsupfig4.png}
       \caption{The normalized causal results of CReP on simulation datasets. Blue bars denote the top 10 variables by causal strength, purple bars highlight true causes or effects among them, and red bars indicate true causes or effects that were missed.}
       \label{fig:crepsupfig4}
     \end{figure}
+
+    % TODO: discussion orally
 
     \textbf{Critical discussion.}
 
@@ -258,6 +266,10 @@ based on the spatiotemporal information transformation
 \separatorcolumn
 
 \begin{column}{\colwidth}
+
+  % TODO: move to method
+
+  % TODO: mention self-supervised
 
   \begin{block}{Loss}
 
@@ -276,11 +288,15 @@ based on the spatiotemporal information transformation
       \item \textbf{Orthogonality Loss}: enforces orthogonality among $S$, $Z$, and $V$.
     \end{itemize}
 
+    % TODO: ablation orally
+
     \heading{Ablation Study}
 
     Full loss achieves best overall performance; removing any term reduces causal identification reliability (accuracy/F1/recall), and often worsens forecasting RMSE.
 
   \end{block}
+
+  % TODO: remove supplementary
 
   \begin{block}{Supplementary Details}
 
