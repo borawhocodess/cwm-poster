@@ -219,11 +219,6 @@ based on the spatiotemporal information transformation
           \item Hong Kong cardiovascular inpatients (70x14 - 25) (Fig. \ref{fig:crepfig5})
           \item Japan COVID-19 transmission (30x47 - 14) (Fig. \ref{fig:crepfig5})
         \end{itemize}
-      \item Metrics:
-        \begin{itemize}
-          \item RMSE (lower is better)
-          \item PCC (higher is better)
-        \end{itemize}
     \end{itemize}
 
     \begin{figure}
@@ -246,7 +241,10 @@ based on the spatiotemporal information transformation
         \toprule
         & \multicolumn{2}{c}{Lorenz 96} & \multicolumn{2}{c}{Power grid} & \multicolumn{2}{c}{Dream4} \\
         \cmidrule(lr){2-3} \cmidrule(lr){4-5} \cmidrule(lr){6-7}
-        \textbf{Method} & \textbf{RMSE} & \textbf{PCC} & \textbf{RMSE} & \textbf{PCC} & \textbf{RMSE} & \textbf{PCC} \\
+        \textbf{Method}
+        & \textbf{RMSE $\downarrow$} & \textbf{PCC $\uparrow$}
+        & \textbf{RMSE $\downarrow$} & \textbf{PCC $\uparrow$}
+        & \textbf{RMSE $\downarrow$} & \textbf{PCC $\uparrow$} \\
         \midrule
         CReP     & \textbf{0.1086} & \textbf{0.9908} & \textbf{0.1127} & \textbf{0.9868} & \textbf{0.0984} & 0.8894 \\
         ARNN     & 0.2328          & 0.8206          & 0.1501          & 0.9784          & 0.2281          & 0.8167 \\
