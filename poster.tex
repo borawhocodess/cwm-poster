@@ -35,7 +35,7 @@
 \newlength{\sepwidth}
 \newlength{\colwidth}
 \setlength{\sepwidth}{0.025\paperwidth}
-\setlength{\colwidth}{0.3\paperwidth}
+\setlength{\colwidth}{0.45\paperwidth}
 
 \newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
 
@@ -290,11 +290,6 @@ based on the spatiotemporal information transformation
     While CReP correctly ranks many true causes and effects among the top variables, Fig.~\ref{fig:crepsupfig4} also reveals \textbf{false positives} and \textbf{missed true causes}. Moreover, the forecasting comparison in Table~\ref{tab:crepsuptab4} is limited to relatively \textbf{basic baselines} (e.g., ARIMA, LSTM, SVR) and does not include more recent state-of-the-art foundation time-series models. In addition, history length choice in datasets, prediction length, and hyperparameter choices differ between datasets, raising questions about the fairness of the evaluations. A more controlled evaluation with matched forecasting horizons and stronger baselines would be required to fully assess CReP's performance.
 
   \end{block}
-\end{column}
-
-\separatorcolumn
-
-\begin{column}{\colwidth}
 
   \begin{block}{Conclusion}
 
