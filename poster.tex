@@ -207,18 +207,12 @@ based on the spatiotemporal information transformation
 
   \begin{block}{Results}
 
+    \heading{Simulation systems}
+
     \begin{itemize}
-      \item Simulation systems:
-        \begin{itemize}
-          \item Lorenz 96 (50x60 - 15) (Fig. \ref{fig:crepfig2lorenz})
-          \item Kuramoto power grid (30x120 - 9)
-          \item Gene regulatory network (Dream4) (40x50 - 8)
-        \end{itemize}
-      \item Real datasets:
-        \begin{itemize}
-          \item Hong Kong cardiovascular inpatients (70x14 - 25) (Fig. \ref{fig:crepfig5hk})
-          \item Japan COVID-19 transmission (30x47 - 14)
-        \end{itemize}
+      \item Lorenz 96 (50x60 - 15) (Fig. \ref{fig:crepfig2lorenz})
+      \item Kuramoto power grid (30x120 - 9)
+      \item Gene regulatory network (Dream4) (40x50 - 8)
     \end{itemize}
 
     \begin{figure}
@@ -233,20 +227,6 @@ based on the spatiotemporal information transformation
       \end{minipage}\hfill
       \caption{Performance of the CReP on Lorenz 96.}
       \label{fig:crepfig2lorenz}
-    \end{figure}
-
-    \begin{figure}
-      \centering
-      \begin{minipage}[t]{0.49\linewidth}
-        \centering
-        \includegraphics[width=\linewidth]{img/crepfig5hkforecast.png}
-      \end{minipage}\hfill
-      \begin{minipage}[t]{0.49\linewidth}
-        \centering
-        \includegraphics[width=\linewidth]{img/crepfig5hkcausal.png}
-      \end{minipage}\hfill
-      \caption{Performance of the CReP on Hong Kong cardiovascular inpatients.}
-      \label{fig:crepfig5hk}
     \end{figure}
 
     \begin{table}
@@ -282,11 +262,26 @@ based on the spatiotemporal information transformation
       \label{fig:crepsupfig4dream}
     \end{figure}
 
-    % TODO: discussion orally
+    \heading{Real datasets}
 
-    \textbf{Critical discussion.}
+    \begin{itemize}
+      \item Hong Kong cardiovascular inpatients (70x14 - 25) (Fig. \ref{fig:crepfig5hk})
+      \item Japan COVID-19 transmission (30x47 - 14)
+    \end{itemize}
 
-    While CReP correctly ranks many true causes and effects among the top variables, Fig.~\ref{fig:crepsupfig4} also reveals \textbf{false positives} and \textbf{missed true causes}. Moreover, the forecasting comparison in Table~\ref{tab:crepsuptab4} is limited to relatively \textbf{basic baselines} (e.g., ARIMA, LSTM, SVR) and does not include more recent state-of-the-art foundation time-series models. In addition, history length choice in datasets, prediction length, and hyperparameter choices differ between datasets, raising questions about the fairness of the evaluations. A more controlled evaluation with matched forecasting horizons and stronger baselines would be required to fully assess CReP's performance.
+    \begin{figure}
+      \centering
+      \begin{minipage}[t]{0.49\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{img/crepfig5hkforecast.png}
+      \end{minipage}\hfill
+      \begin{minipage}[t]{0.49\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{img/crepfig5hkcausal.png}
+      \end{minipage}\hfill
+      \caption{Performance of the CReP on Hong Kong cardiovascular inpatients.}
+      \label{fig:crepfig5hk}
+    \end{figure}
 
   \end{block}
 
@@ -305,6 +300,12 @@ based on the spatiotemporal information transformation
       \item Integrating different causal learning methods to enhance applicability across diverse domains.
       \item Exploring causal detection methods through active intervention rather than mere passive observations.
     \end{itemize}
+
+    % TODO: discussion orally
+
+    \textbf{Critical discussion.}
+
+    While CReP correctly ranks many true causes and effects among the top variables, Fig.~\ref{fig:crepsupfig4} also reveals \textbf{false positives} and \textbf{missed true causes}. Moreover, the forecasting comparison in Table~\ref{tab:crepsuptab4} is limited to relatively \textbf{basic baselines} (e.g., ARIMA, LSTM, SVR) and does not include more recent state-of-the-art foundation time-series models. In addition, history length choice in datasets, prediction length, and hyperparameter choices differ between datasets, raising questions about the fairness of the evaluations. A more controlled evaluation with matched forecasting horizons and stronger baselines would be required to fully assess CReP's performance.
 
   \end{block}
 
