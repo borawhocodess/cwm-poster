@@ -105,15 +105,12 @@ based on the spatiotemporal information transformation
 
     \heading{Objectives}
 
-    % TODO: just describe it with words and put the definition of the terms to where it is needed to the loss function
-
       \begin{itemize}
-        \item Given observations $X_t$ and a chosen target $y=x_k$:
-          \begin{itemize}
-            \item \textbf{Forecast} $y$ for multiple future steps in one shot.
-            \item \textbf{Identify} which variables likely \textbf{cause} $y$ and which are likely \textbf{effects} of $y$.
-          \end{itemize}
-        \item Achieve this \textbf{self-supervised}.
+        \item From high-dimensional time-series observations:
+        \begin{itemize}
+          \item \textbf{Predict} the future trajectory of a selected target variable over multiple time steps.
+          \item \textbf{Identify} which observed variables are likely \textbf{drivers} of the target and which are likely \textbf{responses}.
+        \end{itemize}
       \end{itemize}
 
     \heading{Importance of the paper}
