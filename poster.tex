@@ -107,44 +107,44 @@ based on the spatiotemporal information transformation
 
     % TODO: just describe it with words and put the definition of the terms to where it is needed to the loss function
 
-    \begin{itemize}
-    \item Given observations $X_t$ and a chosen target $y=x_k$:
       \begin{itemize}
-        \item \textbf{Forecast} $y$ for multiple future steps in one shot.
-        \item \textbf{Identify} which variables likely \textbf{cause} $y$ and which are likely \textbf{effects} of $y$.
+        \item Given observations $X_t$ and a chosen target $y=x_k$:
+          \begin{itemize}
+            \item \textbf{Forecast} $y$ for multiple future steps in one shot.
+            \item \textbf{Identify} which variables likely \textbf{cause} $y$ and which are likely \textbf{effects} of $y$.
+          \end{itemize}
+        \item Achieve this \textbf{self-supervised}.
       \end{itemize}
-    \item Achieve this \textbf{self-supervised}.
-    \end{itemize}
 
     \heading{Importance of the paper}
 
-    \begin{itemize}
-      \item Enables \textbf{simultaneous forecasting and causal analysis} in high-dimensional time-series systems.
-      \item Provides \textbf{interpretable causal insights} (causes vs.\ effects) rather than black-box predictions.
-    \end{itemize}
+      \begin{itemize}
+        \item Enables \textbf{simultaneous forecasting and causal analysis} in high-dimensional time-series systems.
+        \item Provides \textbf{interpretable causal insights} (causes vs.\ effects) rather than black-box predictions.
+      \end{itemize}
 
-  \heading{Background Theory}
+    \heading{Background Theory}
 
-    \textbf{Dynamic causation (reconstruction principle)}
+      \textbf{Dynamic causation (reconstruction principle)}
 
-    If variable $a$ drives $b$ in a dynamical system, then information about $a$ is embedded in the time series of $b$.
-      Using delay embeddings there exists an implicit mapping (Takens-style):
-      \[
-        A_t=(a_t,\dots,a_{t+L-1})^\top,\quad
-        B_t=(b_t,\dots,b_{t+L})^\top,\quad
-        A_t \approx h(B_t)
-      \]
+      If variable $a$ drives $b$ in a dynamical system, then information about $a$ is embedded in the time series of $b$.
+        Using delay embeddings there exists an implicit mapping (Takens-style):
+        \[
+          A_t=(a_t,\dots,a_{t+L-1})^\top,\quad
+          B_t=(b_t,\dots,b_{t+L})^\top,\quad
+          A_t \approx h(B_t)
+        \]
 
-    \textbf{Spatiotemporal information transformation (delay $\leftrightarrow$ non-delay)}
+      \textbf{Spatiotemporal information transformation (delay $\leftrightarrow$ non-delay)}
 
-    STI transformation allows a learned non-delay embedding $C_t$ to be topologically conjugate to $B_t$.
-      \[
-        A_t \approx \tilde{h}(C_t)
-      \]
-      This motivates learning a latent $Z_t$ from which $Y_t$ can be predicted:
-      \[
-        Y_t \approx g(Z_t)
-      \]
+      STI transformation allows a learned non-delay embedding $C_t$ to be topologically conjugate to $B_t$.
+        \[
+          A_t \approx \tilde{h}(C_t)
+        \]
+        This motivates learning a latent $Z_t$ from which $Y_t$ can be predicted:
+        \[
+          Y_t \approx g(Z_t)
+        \]
 
   \end{block}
 
