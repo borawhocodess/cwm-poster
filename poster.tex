@@ -123,12 +123,11 @@ based on the spatiotemporal information transformation
       \item Provides \textbf{interpretable causal insights} (causes vs.\ effects) rather than black-box predictions.
     \end{itemize}
 
-  \end{block}
+  \heading{Background Theory}
 
-  \begin{exampleblock}{Background Theory}
+    \textbf{Dynamic causation (reconstruction principle)}
 
-    \heading{Dynamic causation (reconstruction principle)}
-      If variable $a$ drives $b$ in a dynamical system, then information about $a$ is embedded in the time series of $b$.
+    If variable $a$ drives $b$ in a dynamical system, then information about $a$ is embedded in the time series of $b$.
       Using delay embeddings there exists an implicit mapping (Takens-style):
       \[
         A_t=(a_t,\dots,a_{t+L-1})^\top,\quad
@@ -136,8 +135,9 @@ based on the spatiotemporal information transformation
         A_t \approx h(B_t)
       \]
 
-    \heading{Spatiotemporal information transformation (delay $\leftrightarrow$ non-delay)}
-      STI transformation allows a learned non-delay embedding $C_t$ to be topologically conjugate to $B_t$.
+    \textbf{Spatiotemporal information transformation (delay $\leftrightarrow$ non-delay)}
+
+    STI transformation allows a learned non-delay embedding $C_t$ to be topologically conjugate to $B_t$.
       \[
         A_t \approx \tilde{h}(C_t)
       \]
@@ -146,7 +146,7 @@ based on the spatiotemporal information transformation
         Y_t \approx g(Z_t)
       \]
 
-  \end{exampleblock}
+  \end{block}
 
   \begin{block}{Method}
 
