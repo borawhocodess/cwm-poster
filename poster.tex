@@ -292,18 +292,18 @@ based on the spatiotemporal information transformation
       \item These representations are used to \textbf{predict the future} and \textbf{identify causes and effects}.
     \end{itemize}
 
+    \heading{Critical discussion}
+    \begin{itemize}
+      \item Presence of \textbf{false positives} and \textbf{missed true causes} in Fig.~\ref{fig:crepsupfig4dream}.
+      \item Table~\ref{tab:crepsuptab4} is limited to relatively \textbf{basic baselines} and does not include SOTA methods.
+      \item Use of different hyperparameter choices across datasets.
+    \end{itemize}
+
     \heading{Future Work}
     \begin{itemize}
-      \item Reducing false positives in causal discovery.
       \item Integrating different causal learning methods to enhance applicability across diverse domains.
       \item Exploring causal detection methods through active intervention rather than passive observations.
     \end{itemize}
-
-    % TODO: discussion orally
-
-    \textbf{Critical discussion.}
-
-    While CReP correctly ranks many true causes and effects among the top variables, Fig.~\ref{fig:crepsupfig4} also reveals \textbf{false positives} and \textbf{missed true causes}. Moreover, the forecasting comparison in Table~\ref{tab:crepsuptab4} is limited to relatively \textbf{basic baselines} (e.g., ARIMA, LSTM, SVR) and does not include more recent state-of-the-art foundation time-series models. In addition, history length choice in datasets, prediction length, and hyperparameter choices differ between datasets, raising questions about the fairness of the evaluations. A more controlled evaluation with matched forecasting horizons and stronger baselines would be required to fully assess CReP's performance.
 
   \end{block}
 
