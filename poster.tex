@@ -204,12 +204,6 @@ based on the spatiotemporal information transformation
 
     \heading{Simulation systems}
 
-    \begin{itemize}
-      \item Lorenz 96 (50x60 - 15) (Fig. \ref{fig:crepfig2lorenz})
-      \item Kuramoto power grid (30x120 - 9)
-      \item Gene regulatory network (Dream4) (40x50 - 8)
-    \end{itemize}
-
     \begin{figure}
       \centering
       \begin{minipage}[t]{0.49\linewidth}
@@ -220,7 +214,7 @@ based on the spatiotemporal information transformation
         \centering
         \includegraphics[width=\linewidth]{img/crepfig2causal.png}
       \end{minipage}\hfill
-      \caption{Performance of the CReP on Lorenz 96.}
+      \caption{CReP on Lorenz 96 (50-step history, 15-step-ahead prediction, 60D system).}
       \label{fig:crepfig2lorenz}
     \end{figure}
 
@@ -259,11 +253,6 @@ based on the spatiotemporal information transformation
 
     \heading{Real datasets}
 
-    \begin{itemize}
-      \item Hong Kong cardiovascular inpatients (70x14 - 25) (Fig. \ref{fig:crepfig5hk})
-      \item Japan COVID-19 transmission (30x47 - 14)
-    \end{itemize}
-
     \begin{figure}
       \centering
       \begin{minipage}[t]{0.49\linewidth}
@@ -274,7 +263,7 @@ based on the spatiotemporal information transformation
         \centering
         \includegraphics[width=\linewidth]{img/crepfig5hkcausal.png}
       \end{minipage}\hfill
-      \caption{Performance of the CReP on Hong Kong cardiovascular inpatients.}
+      \caption{CReP on Hong Kong cardiovascular inpatients (70-day history, 25-day-ahead forecasting, 14 variables).}
       \label{fig:crepfig5hk}
     \end{figure}
 
