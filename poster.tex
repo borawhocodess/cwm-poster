@@ -125,26 +125,34 @@ based on the spatiotemporal information transformation
 
     \heading{Background Theory}
 
-      \textbf{Dynamic causation (reconstruction principle)}
+      \begin{itemize}
 
-      If variable $a$ drives $b$ in a dynamical system, then information about $a$ is embedded in the time series of $b$.
-        Using delay embeddings there exists an implicit mapping (Takens-style):
-        \[
-          A_t=(a_t,\dots,a_{t+L-1})^\top,\quad
-          B_t=(b_t,\dots,b_{t+L})^\top,\quad
-          A_t \approx h(B_t)
-        \]
+        \item \textbf{Dynamic causation (reconstruction principle)}
 
-      \textbf{Spatiotemporal information transformation (delay $\leftrightarrow$ non-delay)}
+        \begin{itemize}
+          \item If variable $a$ drives $b$ in a dynamical system, then information about $a$ is embedded in the time series of $b$.
+          \item Using delay embeddings, there exists an implicit mapping (Takens-style):
+          \[
+            A_t = (a_t, \dots, a_{t+L-1})^\top, \quad
+            B_t = (b_t, \dots, b_{t+L})^\top, \quad
+            A_t \approx h(B_t)
+          \]
+        \end{itemize}
 
-      STI transformation allows a learned non-delay embedding $C_t$ to be topologically conjugate to $B_t$.
-        \[
-          A_t \approx \tilde{h}(C_t)
-        \]
-        This motivates learning a latent $Z_t$ from which $Y_t$ can be predicted:
-        \[
-          Y_t \approx g(Z_t)
-        \]
+        \item \textbf{Spatiotemporal information transformation (delay $\leftrightarrow$ non-delay)}
+
+        \begin{itemize}
+          \item STI transformation allows a learned non-delay embedding $C_t$ to be topologically conjugate to $B_t$:
+          \[
+            A_t \approx \tilde{h}(C_t)
+          \]
+          \item This motivates learning a latent $Z_t$ from which $Y_t$ can be predicted:
+          \[
+            Y_t \approx g(Z_t)
+          \]
+        \end{itemize}
+
+      \end{itemize}
 
   \end{block}
 
