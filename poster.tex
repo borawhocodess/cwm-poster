@@ -34,7 +34,7 @@
 % (N+1)*\sepwidth + N*\colwidth = \paperwidth
 \newlength{\sepwidth}
 \newlength{\colwidth}
-\setlength{\sepwidth}{0.025\paperwidth}
+\setlength{\sepwidth}{0.01\paperwidth}
 \setlength{\colwidth}{0.45\paperwidth}
 
 \newcommand{\separatorcolumn}{\begin{column}{\sepwidth}\end{column}}
@@ -85,7 +85,7 @@ based on the spatiotemporal information transformation
 \begin{columns}[t]
 \separatorcolumn
 
-\begin{column}{\colwidth}
+\begin{column}{0.44\paperwidth}
 
   \begin{alertblock}{TL;DR}
 
@@ -97,7 +97,7 @@ based on the spatiotemporal information transformation
 
   \begin{block}{Introduction}
 
-    \heading{Objectives}
+    \vspace{-0.5em}\heading{Objectives}\vspace{-0.5em}
 
       \begin{itemize}
         \item From high-dimensional time-series observations:
@@ -107,20 +107,20 @@ based on the spatiotemporal information transformation
         \end{itemize}
       \end{itemize}
 
-    \heading{Problem}
+    \vspace{-0.5em}\heading{Problem}\vspace{-0.5em}
 
       \begin{itemize}
         \item Existing approaches forecast well but remain non-causal, or infer causality separately.
       \end{itemize}
 
-    \heading{Importance of the paper}
+    \vspace{-0.5em}\heading{Importance of the paper}\vspace{-0.5em}
 
       \begin{itemize}
         \item Enables \textbf{simultaneous forecasting and causal analysis} in high-dimensional time-series systems.
         \item Provides \textbf{interpretable causal insights} (causes vs.\ effects) rather than black-box predictions.
       \end{itemize}
 
-    \heading{Grounding}
+    \vspace{-0.5em}\heading{Grounding}\vspace{-0.5em}
 
       \begin{itemize}
 
@@ -157,19 +157,19 @@ based on the spatiotemporal information transformation
 
     The self-supervised framework is characterized by three key features:
     \begin{enumerate}
-      \item Dynamic causation detection with the STI transformation mechanism (Fig. \ref{fig:crepfig1}a).
-      \item Causal-oriented representation learning for multi-step predictions through the CReP (Fig. \ref{fig:crepfig1}b).
-      \item Causal analysis of the target variable via $\alpha\beta$-LRP (Fig. \ref{fig:crepfig1}c).
+      \item Dynamic causation detection with the STI transformation mechanism.
+      \item Causal-oriented representation learning for multi-step predictions through the CReP.
+      \item Causal analysis of the target variable via $\alpha\beta$-LRP.
     \end{enumerate}
 
     \begin{figure}
       \centering
-      \includegraphics[width=0.82\linewidth]{img/crepfig1.png}
+      \includegraphics[width=0.93\linewidth]{img/crepfig1.png}
       \caption{Schematic illustration of the CReP framework.}
       \label{fig:crepfig1}
     \end{figure}
 
-    \heading{Loss}
+    \vspace{-0.5em}\heading{Loss}\vspace{-0.5em}
 
     \[
       \mathcal{L}=\lambda_1\mathcal{L}_{DS}+\lambda_2\mathcal{L}_{FC}+\lambda_3\mathcal{L}_{REC}+\lambda_4\mathcal{L}_{ORTH}
@@ -192,17 +192,17 @@ based on the spatiotemporal information transformation
 
 \separatorcolumn
 
-\begin{column}{\colwidth}
+\begin{column}{0.51\paperwidth}
 
   \begin{figure}
     \centering
-    \includegraphics[width=0.77\linewidth]{img/crepsupfig1.png}
+    \includegraphics[width=0.80\linewidth]{img/crepsupfig1.png}
     \caption{The flowchart of CReP method.}
   \end{figure}
 
   \begin{block}{Results}
 
-    \heading{Simulation systems}
+    \vspace{-0.5em}\heading{Simulation systems}\vspace{-0.5em}
 
     \begin{figure}
       \centering
@@ -220,6 +220,7 @@ based on the spatiotemporal information transformation
 
     \begin{table}
       \centering
+      \small
       \begin{tabular}{l r r r r r r}
         \toprule
         & \multicolumn{2}{c}{Lorenz 96} & \multicolumn{2}{c}{Power grid} & \multicolumn{2}{c}{Dream4} \\
@@ -246,12 +247,12 @@ based on the spatiotemporal information transformation
 
     \begin{figure}
       \centering
-      \includegraphics[width=0.69\linewidth]{img/crepsupfig4dream.png}
+      \includegraphics[width=0.76\linewidth]{img/crepsupfig4dream.png}
       \caption{The normalized causal results of CReP on Dream4. Blue bars denote the top 10 variables by causal strength, purple bars highlight true causes or effects among them, and red bars indicate true causes or effects that were missed.}
       \label{fig:crepsupfig4dream}
     \end{figure}
 
-    \heading{Real datasets}
+    \vspace{-0.5em}\heading{Real datasets}\vspace{-0.5em}
 
     \begin{figure}
       \centering
@@ -271,21 +272,21 @@ based on the spatiotemporal information transformation
 
   \begin{block}{Conclusion}
 
-    \heading{Key Points}
+    \vspace{-0.5em}\heading{Key Points}\vspace{-0.5em}
     \begin{itemize}
       \item Causes leave \textbf{detectable traces} in the dynamics of what they influence.
       \item CReP learns to \textbf{extract these traces} from high-dimensional time series.
       \item These representations are used to \textbf{predict the future} and \textbf{identify causes and effects}.
     \end{itemize}
 
-    \heading{Critical discussion}
+    \vspace{-0.5em}\heading{Critical discussion}\vspace{-0.5em}
     \begin{itemize}
       \item Presence of \textbf{false positives} and \textbf{missed true causes} in Fig.~\ref{fig:crepsupfig4dream}.
       \item Table~\ref{tab:crepsuptab4} is limited to relatively \textbf{basic baselines} and does not include SOTA methods.
       \item Use of different hyperparameter choices across datasets.
     \end{itemize}
 
-    \heading{Future Work}
+    \vspace{-0.5em}\heading{Future Work}\vspace{-0.5em}
     \begin{itemize}
       \item Integrating different causal learning methods to enhance applicability across diverse domains.
       \item Exploring causal detection methods through active intervention rather than passive observations.
